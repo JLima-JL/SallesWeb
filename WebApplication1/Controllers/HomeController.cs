@@ -12,7 +12,12 @@ namespace WebApplication1.Controllers
         {
             _logger = logger;
         }
-
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Aplicativo Web de Vendas Usando MVC do C#.";
+            ViewData["Aluno"] = "Junior Lima";
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
