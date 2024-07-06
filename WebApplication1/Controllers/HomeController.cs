@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WebApplication1.Models;
+using WebApplication1.Models.ViewModels;
 
 namespace WebApplication1.Controllers
 {
@@ -16,6 +16,7 @@ namespace WebApplication1.Controllers
         {
             ViewData["Message"] = "Aplicativo Web de Vendas Usando MVC do C#.";
             ViewData["Aluno"] = "Junior Lima";
+
             return View();
         }
         public IActionResult Index()
