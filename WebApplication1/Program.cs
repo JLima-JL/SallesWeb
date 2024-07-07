@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql;
 using Microsoft.Extensions.DependencyInjection;
-using WebApplication1.Data;
+using WebApplication1.Models;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WebApplication1Context>(options => {
     var connectionString = builder.Configuration.GetConnectionString("WebApplication1");
