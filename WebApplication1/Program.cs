@@ -3,6 +3,7 @@ using Pomelo.EntityFrameworkCore.MySql;
 using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Models;
 using WebApplication1.Data;
+using WebApplication1.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,8 @@ builder.Services.AddDbContext<WebApplication1Context>(options =>
 
 // Registrar o serviço de seeding
 builder.Services.AddScoped<SeedingService>();
+// Registrar serviço de Sellers
+builder.Services.AddScoped<SellerService>();
 
 // Adicionar controladores com views
 builder.Services.AddControllersWithViews();
