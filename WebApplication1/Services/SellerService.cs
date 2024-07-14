@@ -14,5 +14,12 @@ namespace WebApplication1.Services
         {
             return _context.Seller.ToList();
         }
+
+        public void Insert(Seller seller)
+        {
+            seller.Departments = _context.Departments.First();
+            _context.Add(seller);
+            _context.SaveChanges();
+        }
     }
 }
