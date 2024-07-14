@@ -36,7 +36,7 @@ namespace WebApplication1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("WebApplication1.Models.SalesRecord", b =>
@@ -63,7 +63,7 @@ namespace WebApplication1.Migrations
 
                     b.HasIndex("SelerId");
 
-                    b.ToTable("SalesRecord");
+                    b.ToTable("SalesRecord", (string)null);
                 });
 
             modelBuilder.Entity("WebApplication1.Models.Seller", b =>
@@ -80,9 +80,6 @@ namespace WebApplication1.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
                     b.Property<int>("DepartmentsId")
                         .HasColumnType("int");
 
@@ -98,7 +95,7 @@ namespace WebApplication1.Migrations
 
                     b.HasIndex("DepartmentsId");
 
-                    b.ToTable("Seller");
+                    b.ToTable("Seller", (string)null);
                 });
 
             modelBuilder.Entity("WebApplication1.Models.SalesRecord", b =>

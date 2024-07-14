@@ -17,7 +17,6 @@ namespace WebApplication1.Services
 
         public void Insert(Seller seller)
         {
-            seller.Departments = _context.Departments.First();
             _context.Add(seller);
             _context.SaveChanges();
         }

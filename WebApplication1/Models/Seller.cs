@@ -8,8 +8,8 @@ namespace WebApplication1.Models
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
         public double BaseSalary { get; set; }
-        public int DepartmentId {  get; set; }
-        public Departments Departments { get; set; }
+        public int DepartmentsId {  get; set; }
+        public Departments Department { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller() { }
@@ -21,7 +21,7 @@ namespace WebApplication1.Models
             Email = email;
             BirthDate = birthDate;
             BaseSalary = baseSalary;
-            Departments = departments;
+            Department = departments;
         }
 
         public void AddSales(SalesRecord sales) 

@@ -20,6 +20,7 @@ builder.Services.AddDbContext<WebApplication1Context>(options =>
 builder.Services.AddScoped<SeedingService>();
 // Registrar serviço de Sellers
 builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
 
 // Adicionar controladores com views
 builder.Services.AddControllersWithViews();

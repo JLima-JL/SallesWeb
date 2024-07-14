@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace WebApplication1.Models
 {
-    public class Departments 
+    public class Departments
     {
         public int Id { get; set; }
         public string Name { get; set; }
