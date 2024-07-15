@@ -1,4 +1,5 @@
 ﻿using WebApplication1.Models;
+using Microsoft.EntityFrameworkCore;
 namespace WebApplication1.Services
 {
     public class SellerService
@@ -23,7 +24,7 @@ namespace WebApplication1.Services
 
         public Seller FindById(int id) 
         {
-            return _context.Seller.First(x => x.Id == id);
+            return _context.Seller.Include(obj => obj.Department).FirstOrDefault(x => x.Id == id);
         }
 
         public void Remove(int id) 
