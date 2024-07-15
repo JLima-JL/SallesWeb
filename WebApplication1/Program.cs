@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Models;
 using WebApplication1.Data;
 using WebApplication1.Services;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,6 +44,13 @@ void SeedDatabase(WebApplication app)
 // Configurar o pipeline de requisições HTTP.
 if (!app.Environment.IsDevelopment())
 {
+    var enUS = new CultureInfo("en-US");
+    var localizationOption = new RequestLocalizationOptions
+    {
+        DefaultRequestCulture = new RequestCulture(enUS),
+        SupportedCultures = new List<CultureInfo> { enUS },
+        SupportedUICultures = new List<CultureInfo> { enUS }
+    };
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
