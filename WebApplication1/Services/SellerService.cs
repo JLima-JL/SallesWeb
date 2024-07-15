@@ -1,5 +1,7 @@
 ﻿using WebApplication1.Models;
 using Microsoft.EntityFrameworkCore;
+using WebApplication1.Services.Exeptions;
+
 namespace WebApplication1.Services
 {
     public class SellerService
@@ -33,6 +35,22 @@ namespace WebApplication1.Services
             _context.Seller.Remove(obj);
             _context.SaveChanges();
         
+        }
+        public void UpDate(Seller obj)
+        {
+            if(!_context.Seller.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id Not Found");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex) 
+            {
+                throw new DbUpdateConcurrencyException(ex.Message);
+            }
         }
     }
 }
